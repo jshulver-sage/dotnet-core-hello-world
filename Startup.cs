@@ -6,7 +6,8 @@ using Newtonsoft.Json;
 namespace HelloWeb
 {
     public class MyClass {
-      public string MyString;
+      public string From;
+      public string Message;
     }
 
     public class Startup
@@ -16,7 +17,8 @@ namespace HelloWeb
             app.Run(context =>
             {
                 MyClass output = new MyClass();
-                output.MyString = "Hello there!";
+                output.From = "Sage";
+                output.Message = "Hi there!";
 
                 string json = JsonConvert.SerializeObject(output);
                 return context.Response.WriteAsync(json);
